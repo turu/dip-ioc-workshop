@@ -13,11 +13,13 @@ import static org.fest.assertions.Assertions.assertThat;
  * Author: Piotr Turek
  */
 public class StudentIT {
-    private Student instance;
+    private Student student;
+    private ExamStudent examStudent;
 
     @Before
     public void setUp() throws Exception {
-        instance = new Student();
+        student = new Student();
+        examStudent = new ExamStudent();
     }
 
 
@@ -27,10 +29,23 @@ public class StudentIT {
         final List<String> pars = Arrays.asList("Par1", "Par2", "Par3");
 
         //when
-        instance.writeEssay(pars);
+        student.writeEssay(pars);
 
         //then
-        final IPaper paper = instance.getPaper();
+        final IPaper paper = student.getPaper();
+        assertThat(paper.toString()).isEqualTo("^Par^^Par^^Par^");
+    }
+
+    @Test
+    public void testWriteExam() throws Exception {
+        //given
+        final List<String> pars = Arrays.asList("Par1", "Par2", "Par3");
+
+        //when
+        examStudent.writeEssay(pars);
+
+        //then
+        final IPaper paper = examStudent.getPaper();
         assertThat(paper.toString()).isEqualTo("^Par^^Par^^Par^");
     }
 
