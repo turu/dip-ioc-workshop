@@ -5,9 +5,9 @@ import bit.ideafactory.iocworkshop.studentkit.IErasor;
 /**
  * @author Michal Partyka
  */
-public class Ruber implements IErasor {
+public class Rubber implements IErasor {
     @Override
-    public String erase(String message, int numberOfCharsForErasing) {
+    public String eraseLast(String message) {
         return null;  //To change body of implemented methods use File | Settings | File Templates.
     }
 }
