@@ -13,6 +13,16 @@ public abstract class AbstractPaper implements IPaper {
     private final List<String> paragraphs = new LinkedList<String>();
 
     @Override
+    public String toString() {
+        final StringBuilder builder = new StringBuilder();
+        for (String paragraph : paragraphs) {
+            builder.append(paragraph);
+        }
+
+        return builder.toString();
+    }
+
+    @Override
     public void addParagraph(String writtenParagraph) {
         if (!canAccept(writtenParagraph)) {
             throw new IllegalArgumentException("Cannot accept a paragraph written this way");
