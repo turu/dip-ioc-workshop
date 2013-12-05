@@ -1,3 +1,5 @@
+package bit.ideafactory.iocworkshop.studentkit.erasers;
+
 import bit.ideafactory.iocworkshop.studentkit.erasers.Rubber;
 import org.junit.Test;
 
