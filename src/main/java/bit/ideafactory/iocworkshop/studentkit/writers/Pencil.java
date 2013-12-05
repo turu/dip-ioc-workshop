@@ -5,9 +5,10 @@ import bit.ideafactory.iocworkshop.studentkit.IWriter;
 /**
  * @author Michal Partyka
  */
-public class Pen implements IWriter {
+public class Pencil implements IWriter {
+
     @Override
     public String write(String message) {
-        return "*" + message + "*";
+        return "^" + message + "^";
     }
 }
