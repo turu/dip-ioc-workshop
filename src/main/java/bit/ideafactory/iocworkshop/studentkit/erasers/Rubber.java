@@ -9,10 +9,10 @@ public class Rubber extends AbstractErasor implements IErasor {
     @Override
     public String eraseLast(String message) {
 
-        if ( ! message.endsWith("^") ) {
-            throw new IllegalStateException("Pencil cannot erase if message was not written with Pencil");
+        if ( message.endsWith("^") ) {
+            return super.eraseLast(message);
         }
 
-        return super.eraseLast(message);
+        throw new IllegalStateException("Rubber can only erase text written with Pencil");
     }
 }
