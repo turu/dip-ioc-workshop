@@ -1,6 +1,5 @@
-package bit.ideafactory.iocworkshop.studentkit;
+package bit.ideafactory.iocworkshop;
 
-import bit.ideafactory.iocworkshop.Student;
 import bit.ideafactory.iocworkshop.studentkit.paper.LessonPaper;
 import org.junit.Before;
 import org.junit.Test;

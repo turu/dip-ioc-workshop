@@ -1,4 +1,4 @@
-package bit.ideafactory.iocworkshop.studentkit.paper;
+package bit.ideafactory.iocworkshop.studentkit;
 
 import bit.ideafactory.iocworkshop.studentkit.IWriter;
 import bit.ideafactory.iocworkshop.studentkit.writers.Pen;

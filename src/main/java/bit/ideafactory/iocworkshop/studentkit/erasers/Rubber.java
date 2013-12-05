@@ -1,11 +1,11 @@
 package bit.ideafactory.iocworkshop.studentkit.erasers;
 
-import bit.ideafactory.iocworkshop.studentkit.IErasor;
+import bit.ideafactory.iocworkshop.studentkit.IEraser;
 
 /**
  * @author Michal Partyka
  */
-public class Rubber extends AbstractErasor implements IErasor {
+public class Rubber extends AbstractEraser implements IEraser {
     @Override
     public String eraseLast(String message) {
 

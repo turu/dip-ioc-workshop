@@ -1,7 +1,6 @@
 package bit.ideafactory.iocworkshop.studentkit.paper;
 
-import bit.ideafactory.iocworkshop.studentkit.IWriter;
-import bit.ideafactory.iocworkshop.studentkit.writers.Pen;
+import bit.ideafactory.iocworkshop.studentkit.IPaper;
 
 import java.util.LinkedList;
 import java.util.List;
