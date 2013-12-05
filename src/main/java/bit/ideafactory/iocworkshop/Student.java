@@ -1,6 +1,9 @@
 package bit.ideafactory.iocworkshop;
 
+import bit.ideafactory.iocworkshop.studentkit.IErasor;
+import bit.ideafactory.iocworkshop.studentkit.IWriter;
 import bit.ideafactory.iocworkshop.studentkit.erasers.Rubber;
+import bit.ideafactory.iocworkshop.studentkit.paper.IPaper;
 import bit.ideafactory.iocworkshop.studentkit.paper.LessonPaper;
 import bit.ideafactory.iocworkshop.studentkit.writers.Pencil;
 
@@ -10,9 +13,9 @@ import java.util.List;
  * @author Michal Partyka
  */
 public class Student {
-    private final Rubber rubber;
-    private final Pencil pencil;
-    private final LessonPaper paper;
+    protected final IErasor rubber;
+    protected final IWriter pencil;
+    protected final IPaper paper;
 
     public Student() {
         paper = new LessonPaper();
@@ -26,7 +29,7 @@ public class Student {
         }
     }
 
-    public LessonPaper getPaper() {
+    public IPaper getPaper() {
         return paper;
     }
 
