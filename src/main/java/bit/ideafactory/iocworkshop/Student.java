@@ -37,7 +37,7 @@ public class Student {
     private void writeParagraph(String paragraph) {
         final String writtenParagraph = pencil.write(paragraph);
         paper.addParagraph(writtenParagraph);
-        final String fixedParagraph = fixParagraph(paragraph);
+        final String fixedParagraph = fixParagraph(writtenParagraph);
         paper.updateLastParagraph(fixedParagraph);
     }
 
