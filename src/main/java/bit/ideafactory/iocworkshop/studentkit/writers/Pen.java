@@ -6,7 +6,7 @@ import bit.ideafactory.iocworkshop.studentkit.IWriter;
  * @author Michal Partyka
  */
 public class Pen extends AbstractWriter implements IWriter {
-    private static final char PEN_SPECIAL_CHARACTER = '*';
+    public static final char PEN_SPECIAL_CHARACTER = '*';
 
     @Override
     public String write(String message) {
