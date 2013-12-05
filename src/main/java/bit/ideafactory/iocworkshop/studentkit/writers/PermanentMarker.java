@@ -1,4 +1,4 @@
-package bit.ideafactory.iocworkshop.studentkit.erasers;
+package bit.ideafactory.iocworkshop.studentkit.writers;
 
 import bit.ideafactory.iocworkshop.studentkit.IWriter;
 import bit.ideafactory.iocworkshop.studentkit.writers.AbstractWriter;
