@@ -1,6 +1,6 @@
 package bit.ideafactory.iocworkshop;
 
-import bit.ideafactory.iocworkshop.studentkit.paper.LessonPaper;
+import bit.ideafactory.iocworkshop.studentkit.IPaper;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -30,7 +30,7 @@ public class StudentIT {
         instance.writeEssay(pars);
 
         //then
-        final LessonPaper paper = instance.getPaper();
+        final IPaper paper = instance.getPaper();
         assertThat(paper.toString()).isEqualTo("^Par^^Par^^Par^");
     }
 
