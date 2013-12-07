@@ -13,14 +13,14 @@ import java.util.List;
  * @author Michal Partyka
  */
 public class Student {
-    protected IEraser eraser;
-    protected IWriter writer;
-    protected IPaper paper;
+    private final IEraser eraser;
+    private final IWriter writer;
+    private final IPaper paper;
 
-    public Student() {
-        paper = new LessonPaper();
-        eraser = new Rubber();
-        writer = new Pencil();
+    public Student(IEraser eraser, IWriter writer, IPaper paper) {
+        this.eraser = eraser;
+        this.writer = writer;
+        this.paper = paper;
     }
 
     public void writeEssay(List<String> paragraphs) {

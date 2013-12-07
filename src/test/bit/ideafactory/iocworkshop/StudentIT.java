@@ -1,7 +1,14 @@
 package bit.ideafactory.iocworkshop;
 
+import bit.ideafactory.iocworkshop.studentkit.IEraser;
 import bit.ideafactory.iocworkshop.studentkit.IPaper;
-import org.junit.Before;
+import bit.ideafactory.iocworkshop.studentkit.IWriter;
+import bit.ideafactory.iocworkshop.studentkit.erasers.Corrector;
+import bit.ideafactory.iocworkshop.studentkit.erasers.Rubber;
+import bit.ideafactory.iocworkshop.studentkit.paper.ExamPaper;
+import bit.ideafactory.iocworkshop.studentkit.paper.LessonPaper;
+import bit.ideafactory.iocworkshop.studentkit.writers.Pen;
+import bit.ideafactory.iocworkshop.studentkit.writers.Pencil;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -13,19 +20,13 @@ import static org.fest.assertions.Assertions.assertThat;
  * Author: Piotr Turek
  */
 public class StudentIT {
-    private Student student;
-    private ExamStudent examStudent;
-
-    @Before
-    public void setUp() throws Exception {
-        student = new Student();
-        examStudent = new ExamStudent();
-    }
-
-
     @Test
     public void testWriteEssay() throws Exception {
         //given
+        final IWriter pencil = new Pencil();
+        final IEraser rubber = new Rubber();
+        final IPaper lessonPaper = new LessonPaper();
+        final Student student = new Student(rubber, pencil, lessonPaper);
         final List<String> pars = Arrays.asList("Par1", "Par2", "Par3");
 
         //when
@@ -39,6 +40,10 @@ public class StudentIT {
     @Test
     public void testWriteExam() throws Exception {
         //given
+        final IWriter pen = new Pen();
+        final IEraser corrector = new Corrector();
+        final IPaper examPaper = new ExamPaper();
+        final Student examStudent = new Student(corrector, pen, examPaper);
         final List<String> pars = Arrays.asList("Par1", "Par2", "Par3");
 
         //when
@@ -46,7 +51,7 @@ public class StudentIT {
 
         //then
         final IPaper paper = examStudent.getPaper();
-        assertThat(paper.toString()).isEqualTo("^Par^^Par^^Par^");
+        assertThat(paper.toString()).isEqualTo("*Par**Par**Par*");
     }
 
 }
