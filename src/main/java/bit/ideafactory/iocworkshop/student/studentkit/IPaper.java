@@ -1,7 +1,4 @@
-package bit.ideafactory.iocworkshop.studentkit;
-
-import bit.ideafactory.iocworkshop.studentkit.IWriter;
-import bit.ideafactory.iocworkshop.studentkit.writers.Pen;
+package bit.ideafactory.iocworkshop.student.studentkit;
 
 /**
  * Author: Piotr Turek

@@ -1,4 +1,4 @@
-package bit.ideafactory.iocworkshop.studentkit;
+package bit.ideafactory.iocworkshop.student.studentkit;
 
 /**
  * @author Michal Partyka
