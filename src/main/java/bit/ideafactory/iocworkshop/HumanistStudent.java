@@ -3,34 +3,27 @@ package bit.ideafactory.iocworkshop;
 import bit.ideafactory.iocworkshop.studentkit.IEraser;
 import bit.ideafactory.iocworkshop.studentkit.IPaper;
 import bit.ideafactory.iocworkshop.studentkit.IWriter;
-import bit.ideafactory.iocworkshop.studentkit.erasers.Rubber;
-import bit.ideafactory.iocworkshop.studentkit.paper.LessonPaper;
-import bit.ideafactory.iocworkshop.studentkit.writers.Pencil;
 
 import java.util.List;
 
 /**
  * @author Michal Partyka
  */
-public class Student {
+public class HumanistStudent extends AbstractStudent {
     private final IEraser eraser;
     private final IWriter writer;
-    private final IPaper paper;
 
-    public Student(IEraser eraser, IWriter writer, IPaper paper) {
+    public HumanistStudent(IEraser eraser, IWriter writer, IPaper paper) {
+        super(paper);
         this.eraser = eraser;
         this.writer = writer;
-        this.paper = paper;
     }
 
+    @Override
     public void writeEssay(List<String> paragraphs) {
         for (String paragraph : paragraphs) {
             writeParagraph(paragraph);
         }
-    }
-
-    public IPaper getPaper() {
-        return paper;
     }
 
     private String fixParagraph(String paragraph) {
@@ -39,6 +32,11 @@ public class Student {
 
     private void writeParagraph(String paragraph) {
         final String writtenParagraph = writer.write(paragraph);
+        final IPaper paper = getPaper();
+        doWriteParagraph(writtenParagraph, paper);
+    }
+
+    private void doWriteParagraph(String writtenParagraph, IPaper paper) {
         paper.addParagraph(writtenParagraph);
         final String fixedParagraph = fixParagraph(writtenParagraph);
         paper.updateLastParagraph(fixedParagraph);

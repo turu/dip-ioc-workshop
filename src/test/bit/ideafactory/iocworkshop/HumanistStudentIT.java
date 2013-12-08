@@ -19,14 +19,14 @@ import static org.fest.assertions.Assertions.assertThat;
 /**
  * Author: Piotr Turek
  */
-public class StudentIT {
+public class HumanistStudentIT {
     @Test
     public void testWriteEssay() throws Exception {
         //given
         final IWriter pencil = new Pencil();
         final IEraser rubber = new Rubber();
         final IPaper lessonPaper = new LessonPaper();
-        final Student student = new Student(rubber, pencil, lessonPaper);
+        final IStudent student = new HumanistStudent(rubber, pencil, lessonPaper);
         final List<String> pars = Arrays.asList("Par1", "Par2", "Par3");
 
         //when
@@ -43,7 +43,7 @@ public class StudentIT {
         final IWriter pen = new Pen();
         final IEraser corrector = new Corrector();
         final IPaper examPaper = new ExamPaper();
-        final Student examStudent = new Student(corrector, pen, examPaper);
+        final IStudent examStudent = new HumanistStudent(corrector, pen, examPaper);
         final List<String> pars = Arrays.asList("Par1", "Par2", "Par3");
 
         //when
