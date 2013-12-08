@@ -1,8 +1,8 @@
 package bit.ideafactory.iocworkshop.student;
 
-import bit.ideafactory.iocworkshop.studentkit.IEraser;
-import bit.ideafactory.iocworkshop.studentkit.IPaper;
-import bit.ideafactory.iocworkshop.studentkit.IWriter;
+import bit.ideafactory.iocworkshop.student.studentkit.IEraser;
+import bit.ideafactory.iocworkshop.student.studentkit.IPaper;
+import bit.ideafactory.iocworkshop.student.studentkit.IWriter;
 
 import java.util.List;
 

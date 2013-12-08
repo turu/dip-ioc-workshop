@@ -1,11 +1,12 @@
 package bit.ideafactory.iocworkshop;
 
-import bit.ideafactory.iocworkshop.studentkit.IPaper;
-import bit.ideafactory.iocworkshop.studentkit.IWriter;
-import bit.ideafactory.iocworkshop.studentkit.paper.ExamPaper;
-import bit.ideafactory.iocworkshop.studentkit.paper.LessonPaper;
-import bit.ideafactory.iocworkshop.studentkit.writers.Pen;
-import bit.ideafactory.iocworkshop.studentkit.writers.Pencil;
+import bit.ideafactory.iocworkshop.student.FoolStudent;
+import bit.ideafactory.iocworkshop.student.studentkit.IPaper;
+import bit.ideafactory.iocworkshop.student.studentkit.IWriter;
+import bit.ideafactory.iocworkshop.student.studentkit.paper.ExamPaper;
+import bit.ideafactory.iocworkshop.student.studentkit.paper.LessonPaper;
+import bit.ideafactory.iocworkshop.student.studentkit.writers.Pen;
+import bit.ideafactory.iocworkshop.student.studentkit.writers.Pencil;
 import org.junit.Test;
 
 import java.util.Arrays;

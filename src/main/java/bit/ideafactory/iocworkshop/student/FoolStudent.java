@@ -1,7 +1,7 @@
 package bit.ideafactory.iocworkshop.student;
 
-import bit.ideafactory.iocworkshop.studentkit.IPaper;
-import bit.ideafactory.iocworkshop.studentkit.IWriter;
+import bit.ideafactory.iocworkshop.student.studentkit.IPaper;
+import bit.ideafactory.iocworkshop.student.studentkit.IWriter;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ import java.util.List;
 public class FoolStudent extends AbstractStudent {
     private final IWriter writer;
 
-    protected FoolStudent(IWriter writer, IPaper paper) {
+    public FoolStudent(IWriter writer, IPaper paper) {
         super(paper);
         this.writer = writer;
     }

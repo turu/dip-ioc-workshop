@@ -1,6 +1,6 @@
 package bit.ideafactory.iocworkshop;
 
-import bit.ideafactory.iocworkshop.studentkit.IPaper;
+import bit.ideafactory.iocworkshop.student.studentkit.IPaper;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
 package bit.ideafactory.iocworkshop;
 
-import bit.ideafactory.iocworkshop.student.Student;
+import bit.ideafactory.iocworkshop.student.HumanistStudent;
 import bit.ideafactory.iocworkshop.student.studentkit.IEraser;
 import bit.ideafactory.iocworkshop.student.studentkit.IPaper;
 import bit.ideafactory.iocworkshop.student.studentkit.IWriter;
