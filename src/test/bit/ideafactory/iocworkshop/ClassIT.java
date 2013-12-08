@@ -5,18 +5,13 @@ import bit.ideafactory.iocworkshop.student.HumanistStudent;
 import bit.ideafactory.iocworkshop.student.ScientificStudent;
 import bit.ideafactory.iocworkshop.student.studentkit.IPaper;
 import bit.ideafactory.iocworkshop.student.studentkit.erasers.Corrector;
-import bit.ideafactory.iocworkshop.student.studentkit.erasers.Rubber;
 import bit.ideafactory.iocworkshop.student.studentkit.paper.ExamPaper;
 import bit.ideafactory.iocworkshop.student.studentkit.paper.LessonPaper;
 import bit.ideafactory.iocworkshop.student.studentkit.writers.Pen;
-import com.google.common.base.Function;
-import com.google.common.collect.Iterables;
-import com.sun.istack.internal.Nullable;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
@@ -44,10 +39,7 @@ public class ClassIT {
 
     @Before
     public void setUp() throws Exception {
-        instance = new Class();
-        instance.addStudent(scientificStudent);
-        instance.addStudent(humanistStudent);
-        instance.addStudent(foolStudent);
+        instance = new Class(Arrays.<IStudent>asList(scientificStudent, humanistStudent, foolStudent));
     }
 
     @Test

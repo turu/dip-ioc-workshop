@@ -11,7 +11,14 @@ import java.util.Map;
  * @author Michal Partyka
  */
 public class Class {
-    private List<IStudent> students = new ArrayList<IStudent>();
+    private final List<IStudent> students = new ArrayList<IStudent>();
+
+    public Class(List<IStudent> students) {
+        this.students.addAll(students);
+    }
+
+    public Class() {
+    }
 
     public void addStudent(IStudent student) {
         students.add(student);
