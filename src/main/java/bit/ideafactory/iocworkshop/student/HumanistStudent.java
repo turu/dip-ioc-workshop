@@ -1,4 +1,4 @@
-package bit.ideafactory.iocworkshop;
+package bit.ideafactory.iocworkshop.student;
 
 import bit.ideafactory.iocworkshop.studentkit.IEraser;
 import bit.ideafactory.iocworkshop.studentkit.IPaper;

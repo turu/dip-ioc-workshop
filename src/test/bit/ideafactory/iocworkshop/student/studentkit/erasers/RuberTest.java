@@ -1,6 +1,5 @@
-package bit.ideafactory.iocworkshop.studentkit.erasers;
+package bit.ideafactory.iocworkshop.student.studentkit.erasers;
 
-import bit.ideafactory.iocworkshop.studentkit.erasers.Rubber;
 import org.junit.Test;
 
 import static org.fest.assertions.Assertions.assertThat;

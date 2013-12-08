@@ -1,4 +1,4 @@
-package bit.ideafactory.iocworkshop;
+package bit.ideafactory.iocworkshop.student;
 
 import bit.ideafactory.iocworkshop.studentkit.IPaper;
 import bit.ideafactory.iocworkshop.studentkit.IWriter;
@@ -8,20 +8,21 @@ import java.util.List;
 /**
  * Author: Piotr Turek
  */
-public class ScientificStudent extends AbstractStudent {
+public class FoolStudent extends AbstractStudent {
     private final IWriter writer;
 
-    public ScientificStudent(IWriter writer, IPaper paper) {
+    protected FoolStudent(IWriter writer, IPaper paper) {
         super(paper);
         this.writer = writer;
     }
 
     @Override
     public void writeEssay(List<String> paragraphs) {
+        StringBuilder builder = new StringBuilder();
         for (String paragraph : paragraphs) {
-            final String writtenParagraph = writer.write(paragraph);
-            final IPaper paper = getPaper();
-            paper.addParagraph(writtenParagraph);
+            builder.append(paragraph);
         }
+        final String writtenParagraph = writer.write(builder.toString());
+        getPaper().addParagraph(writtenParagraph);
     }
 }

@@ -1,6 +1,6 @@
-package bit.ideafactory.iocworkshop.studentkit.writers;
+package bit.ideafactory.iocworkshop.student.studentkit.writers;
 
-import bit.ideafactory.iocworkshop.studentkit.IWriter;
+import bit.ideafactory.iocworkshop.student.studentkit.IWriter;
 
 /**
  * @author Michal Partyka
