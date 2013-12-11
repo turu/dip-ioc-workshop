@@ -42,4 +42,10 @@ public class HumanistStudent extends AbstractStudent {
         paper.updateLastParagraph(fixedParagraph);
     }
 
+    @Override
+    public String toString() {
+        return "HumanistStudent";
+    }
+
+
 }

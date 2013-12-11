@@ -25,4 +25,9 @@ public class FoolStudent extends AbstractStudent {
         final String writtenParagraph = writer.write(builder.toString());
         getPaper().addParagraph(writtenParagraph);
     }
+
+    @Override
+    public String toString() {
+        return "FoolStudent";
+    }
 }

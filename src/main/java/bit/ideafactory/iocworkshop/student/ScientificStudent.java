@@ -24,4 +24,10 @@ public class ScientificStudent extends AbstractStudent {
             paper.addParagraph(writtenParagraph);
         }
     }
+
+    @Override
+    public String toString() {
+        return "ScientificStudent";
+    }
+
 }
