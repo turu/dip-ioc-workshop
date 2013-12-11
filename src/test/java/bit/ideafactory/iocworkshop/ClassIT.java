@@ -1,17 +1,11 @@
 package bit.ideafactory.iocworkshop;
 
-import bit.ideafactory.iocworkshop.student.FoolStudent;
-import bit.ideafactory.iocworkshop.student.HumanistStudent;
-import bit.ideafactory.iocworkshop.student.ScientificStudent;
 import bit.ideafactory.iocworkshop.student.factories.FoolStudentFactory;
 import bit.ideafactory.iocworkshop.student.factories.HumanistStudentFactory;
 import bit.ideafactory.iocworkshop.student.factories.ScientificStudentFactory;
 import bit.ideafactory.iocworkshop.student.studentkit.IPaper;
 import bit.ideafactory.iocworkshop.student.studentkit.erasers.Corrector;
 import bit.ideafactory.iocworkshop.student.studentkit.erasers.Rubber;
-import bit.ideafactory.iocworkshop.student.studentkit.paper.ExamPaper;
-import bit.ideafactory.iocworkshop.student.studentkit.paper.IPaperFactory;
-import bit.ideafactory.iocworkshop.student.studentkit.paper.LessonPaper;
 import bit.ideafactory.iocworkshop.student.studentkit.paper.factories.ExamPaperFactory;
 import bit.ideafactory.iocworkshop.student.studentkit.paper.factories.LessonPaperFactory;
 import bit.ideafactory.iocworkshop.student.studentkit.writers.Pen;
@@ -29,7 +23,7 @@ import static org.fest.assertions.Assertions.assertThat;
  * Author: Piotr Turek
  */
 public class ClassIT {
-    private Class instance;
+    private MyClass instance;
 
     private FoolStudentFactory foolStudentFactory;
     private HumanistStudentFactory humanistStudentFactory;
@@ -59,7 +53,7 @@ public class ClassIT {
                 humanistStudent,
                 scientificStudent
         );
-        instance = new Class(students);
+        instance = new MyClass(students);
     }
 
     @Test

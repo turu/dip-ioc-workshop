@@ -10,14 +10,14 @@ import java.util.Map;
 /**
  * @author Michal Partyka
  */
-public class Class {
+public class MyClass {
     private final List<IStudent> students = new ArrayList<IStudent>();
 
-    public Class(List<IStudent> students) {
+    public MyClass(List<IStudent> students) {
         this.students.addAll(students);
     }
 
-    public Class() {
+    public MyClass() {
     }
 
     public void addStudent(IStudent student) {
