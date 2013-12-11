@@ -3,4 +3,9 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <bean id="rubber" class="bit.ideafactory.iocworkshop.student.studentkit.erasers.Rubber"/>
+    <bean id="pen" class="bit.ideafactory.iocworkshop.student.studentkit.writers.Pen"/>
+    <bean id="pencil" class="bit.ideafactory.iocworkshop.student.studentkit.writers.Pencil"/>
+    <bean id="corrector" class="bit.ideafactory.iocworkshop.student.studentkit.erasers.Corrector"/>
+
 </beans>
