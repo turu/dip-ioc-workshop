@@ -8,4 +8,7 @@
     <bean id="pencil" class="bit.ideafactory.iocworkshop.student.studentkit.writers.Pencil"/>
     <bean id="corrector" class="bit.ideafactory.iocworkshop.student.studentkit.erasers.Corrector"/>
 
+    <bean id="examPaperFactory" class="bit.ideafactory.iocworkshop.student.studentkit.paper.factories.ExamPaperFactory"/>
+    <bean id="lessonPaperFactory" class="bit.ideafactory.iocworkshop.student.studentkit.paper.factories.LessonPaperFactory"/>
+
 </beans>

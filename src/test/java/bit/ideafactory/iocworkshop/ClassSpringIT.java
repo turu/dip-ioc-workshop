@@ -14,6 +14,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -38,8 +39,11 @@ public class ClassSpringIT {
     private IStudent humanistStudent;
     private IStudent scientificStudent;
 
-    private final ExamPaperFactory examPaperFactory = new ExamPaperFactory();
-    private final LessonPaperFactory lessonPaperFactory = new LessonPaperFactory();
+    @Autowired
+    private ExamPaperFactory examPaperFactory;
+
+    @Autowired
+    private LessonPaperFactory lessonPaperFactory;
 
     @Autowired
     private Corrector corrector;
@@ -71,6 +75,7 @@ public class ClassSpringIT {
     }
 
     @Test
+    @DirtiesContext
     public void testWriteEssay() throws Exception {
         //given
         List<String> paragraphs = Arrays.asList("Par1", "Par2", "Par3");
