@@ -32,30 +32,17 @@ import static org.fest.assertions.Assertions.assertThat;
 public class ClassSpringIT {
     private Class instance;
 
+    @Autowired
     private FoolStudentFactory foolStudentFactory;
+
+    @Autowired
     private HumanistStudentFactory humanistStudentFactory;
+
+    @Autowired
     private ScientificStudentFactory scientificStudentFactory;
     private IStudent foolStudent;
     private IStudent humanistStudent;
     private IStudent scientificStudent;
-
-    @Autowired
-    private ExamPaperFactory examPaperFactory;
-
-    @Autowired
-    private LessonPaperFactory lessonPaperFactory;
-
-    @Autowired
-    private Corrector corrector;
-
-    @Autowired
-    private Rubber rubber;
-
-    @Autowired
-    private Pen pen;
-
-    @Autowired
-    private Pencil pencil;
 
     @Before
     public void setUp() throws Exception {
