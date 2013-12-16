@@ -26,4 +26,14 @@
         <property name="eraser" ref="rubber"/>
         <property name="writer" ref="pencil"/>
     </bean>
+
+    <bean id="studentClass" class="bit.ideafactory.iocworkshop.MyClass">
+        <constructor-arg>
+            <list>
+                <ref bean="foolStudent"/>
+                <ref bean="scientificStudent"/>
+                <ref bean="humanistStudent"/>
+            </list>
+        </constructor-arg>
+    </bean>
 </beans>

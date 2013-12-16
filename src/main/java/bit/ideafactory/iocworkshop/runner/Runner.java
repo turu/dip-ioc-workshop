@@ -34,15 +34,7 @@ public class Runner {
     }
 
     private void init() {
-        final IStudent foolStudent = (IStudent) context.getBean("foolStudent");
-        final IStudent humanistStudent = (IStudent) context.getBean("humanistStudent");
-        final IStudent scientificStudent = (IStudent) context.getBean("scientificStudent");
-        final List<IStudent> students = Arrays.asList(
-                foolStudent,
-                humanistStudent,
-                scientificStudent
-        );
-        myClass = new MyClass(students);
+        myClass = (MyClass) context.getBean("studentClass");
     }
 
     private void run() {
