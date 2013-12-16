@@ -1,8 +1,5 @@
 package bit.ideafactory.iocworkshop;
 
-import bit.ideafactory.iocworkshop.student.factories.FoolStudentFactory;
-import bit.ideafactory.iocworkshop.student.factories.HumanistStudentFactory;
-import bit.ideafactory.iocworkshop.student.factories.ScientificStudentFactory;
 import bit.ideafactory.iocworkshop.student.studentkit.IPaper;
 import bit.ideafactory.iocworkshop.student.studentkit.erasers.Corrector;
 import bit.ideafactory.iocworkshop.student.studentkit.erasers.Rubber;
@@ -25,9 +22,6 @@ import static org.fest.assertions.Assertions.assertThat;
 public class ClassIT {
     private MyClass instance;
 
-    private FoolStudentFactory foolStudentFactory;
-    private HumanistStudentFactory humanistStudentFactory;
-    private ScientificStudentFactory scientificStudentFactory;
     private IStudent foolStudent;
     private IStudent humanistStudent;
     private IStudent scientificStudent;
@@ -41,19 +35,6 @@ public class ClassIT {
 
     @Before
     public void setUp() throws Exception {
-        foolStudentFactory = new FoolStudentFactory(examPaperFactory, corrector, pen);
-        scientificStudentFactory = new ScientificStudentFactory(examPaperFactory, pen);
-        humanistStudentFactory = new HumanistStudentFactory(lessonPaperFactory, rubber, pencil);
-
-        foolStudent = foolStudentFactory.create();
-        humanistStudent = humanistStudentFactory.create();
-        scientificStudent = scientificStudentFactory.create();
-        final List<IStudent> students = Arrays.asList(
-                foolStudent,
-                humanistStudent,
-                scientificStudent
-        );
-        instance = new MyClass(students);
     }
 
     @Test

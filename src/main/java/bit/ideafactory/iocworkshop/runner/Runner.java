@@ -2,19 +2,7 @@ package bit.ideafactory.iocworkshop.runner;
 
 import bit.ideafactory.iocworkshop.IStudent;
 import bit.ideafactory.iocworkshop.MyClass;
-import bit.ideafactory.iocworkshop.student.factories.FoolStudentFactory;
-import bit.ideafactory.iocworkshop.student.factories.HumanistStudentFactory;
-import bit.ideafactory.iocworkshop.student.factories.ScientificStudentFactory;
-import bit.ideafactory.iocworkshop.student.studentkit.IEraser;
 import bit.ideafactory.iocworkshop.student.studentkit.IPaper;
-import bit.ideafactory.iocworkshop.student.studentkit.IWriter;
-import bit.ideafactory.iocworkshop.student.studentkit.erasers.Corrector;
-import bit.ideafactory.iocworkshop.student.studentkit.erasers.Rubber;
-import bit.ideafactory.iocworkshop.student.studentkit.paper.IPaperFactory;
-import bit.ideafactory.iocworkshop.student.studentkit.paper.factories.ExamPaperFactory;
-import bit.ideafactory.iocworkshop.student.studentkit.paper.factories.LessonPaperFactory;
-import bit.ideafactory.iocworkshop.student.studentkit.writers.Pen;
-import bit.ideafactory.iocworkshop.student.studentkit.writers.Pencil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -30,10 +18,6 @@ public class Runner {
     private static final Logger LOG = LoggerFactory.getLogger(Runner.class);
 
     private final ClassPathXmlApplicationContext context;
-
-    private FoolStudentFactory foolStudentFactory;
-    private ScientificStudentFactory scientificStudentFactory;
-    private HumanistStudentFactory humanistStudentFactory;
 
     private MyClass myClass;
 
