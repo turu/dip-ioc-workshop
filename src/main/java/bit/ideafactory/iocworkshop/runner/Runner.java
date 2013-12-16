@@ -50,13 +50,9 @@ public class Runner {
     }
 
     private void init() {
-        foolStudentFactory = (FoolStudentFactory) context.getBean("foolStudentFactory");
-        scientificStudentFactory = (ScientificStudentFactory) context.getBean("scientificStudentFactory");
-        humanistStudentFactory = (HumanistStudentFactory) context.getBean("humanistStudentFactory");
-
-        final IStudent foolStudent = foolStudentFactory.create();
-        final IStudent humanistStudent = humanistStudentFactory.create();
-        final IStudent scientificStudent = scientificStudentFactory.create();
+        final IStudent foolStudent = (IStudent) context.getBean("foolStudent");
+        final IStudent humanistStudent = (IStudent) context.getBean("humanistStudent");
+        final IStudent scientificStudent = (IStudent) context.getBean("scientificStudent");
         final List<IStudent> students = Arrays.asList(
                 foolStudent,
                 humanistStudent,

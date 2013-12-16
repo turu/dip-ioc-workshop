@@ -27,4 +27,8 @@
         <constructor-arg ref="rubber"/>
         <constructor-arg ref="pencil"/>
     </bean>
+
+    <bean id="foolStudent" factory-bean="foolStudentFactory" factory-method="create"/>
+    <bean id="scientificStudent" factory-bean="scientificStudentFactory" factory-method="create"/>
+    <bean id="humanistStudent" factory-bean="humanistStudentFactory" factory-method="create"/>
 </beans>
