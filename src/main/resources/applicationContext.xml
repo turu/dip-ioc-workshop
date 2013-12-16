@@ -12,16 +12,16 @@
     <bean id="lessonPaper" class="bit.ideafactory.iocworkshop.student.studentkit.paper.LessonPaper" scope="prototype"/>
 
     <bean id="foolStudent" scope="prototype" class="bit.ideafactory.iocworkshop.student.FoolStudent">
-        <constructor-arg ref="pen"/>
         <constructor-arg ref="examPaper"/>
+        <property name="writer" ref="pen"/>
     </bean>
     <bean id="scientificStudent" scope="prototype" class="bit.ideafactory.iocworkshop.student.ScientificStudent" >
-        <constructor-arg ref="pen"/>
         <constructor-arg ref="examPaper"/>
+        <property name="writer" ref="pen"/>
     </bean>
     <bean id="humanistStudent" scope="prototype" class="bit.ideafactory.iocworkshop.student.HumanistStudent">
-        <constructor-arg ref="pencil"/>
-        <constructor-arg ref="rubber"/>
         <constructor-arg ref="lessonPaper"/>
+        <property name="eraser" ref="rubber"/>
+        <property name="writer" ref="pencil"/>
     </bean>
 </beans>

@@ -2,6 +2,7 @@ package bit.ideafactory.iocworkshop.student;
 
 import bit.ideafactory.iocworkshop.student.studentkit.IPaper;
 import bit.ideafactory.iocworkshop.student.studentkit.IWriter;
+import org.springframework.beans.factory.annotation.Required;
 
 import java.util.List;
 
@@ -9,10 +10,14 @@ import java.util.List;
  * Author: Piotr Turek
  */
 public class FoolStudent extends AbstractStudent {
-    private final IWriter writer;
+    private IWriter writer;
 
-    public FoolStudent(IWriter writer, IPaper paper) {
+    public FoolStudent(IPaper paper) {
         super(paper);
+    }
+
+    @Required
+    public void setWriter(IWriter writer) {
         this.writer = writer;
     }
 

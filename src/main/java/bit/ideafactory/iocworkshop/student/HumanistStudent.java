@@ -3,6 +3,7 @@ package bit.ideafactory.iocworkshop.student;
 import bit.ideafactory.iocworkshop.student.studentkit.IEraser;
 import bit.ideafactory.iocworkshop.student.studentkit.IPaper;
 import bit.ideafactory.iocworkshop.student.studentkit.IWriter;
+import org.springframework.beans.factory.annotation.Required;
 
 import java.util.List;
 
@@ -10,12 +11,20 @@ import java.util.List;
  * @author Michal Partyka
  */
 public class HumanistStudent extends AbstractStudent {
-    private final IEraser eraser;
-    private final IWriter writer;
+    private IEraser eraser;
+    private IWriter writer;
 
-    public HumanistStudent(IEraser eraser, IWriter writer, IPaper paper) {
+    public HumanistStudent(IPaper paper) {
         super(paper);
+    }
+
+    @Required
+    public void setEraser(IEraser eraser) {
         this.eraser = eraser;
+    }
+
+    @Required
+    public void setWriter(IWriter writer) {
         this.writer = writer;
     }
 
