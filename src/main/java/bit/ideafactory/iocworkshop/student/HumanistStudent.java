@@ -3,28 +3,37 @@ package bit.ideafactory.iocworkshop.student;
 import bit.ideafactory.iocworkshop.student.studentkit.IEraser;
 import bit.ideafactory.iocworkshop.student.studentkit.IPaper;
 import bit.ideafactory.iocworkshop.student.studentkit.IWriter;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Required;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 /**
  * @author Michal Partyka
  */
+@Component
+@Scope(value = "prototype")
 public class HumanistStudent extends AbstractStudent {
     private IEraser eraser;
     private IWriter writer;
 
-    public HumanistStudent(IPaper paper) {
+    @Autowired
+    public HumanistStudent(@Qualifier("lessonPaper") IPaper paper) {
         super(paper);
     }
 
     @Required
-    public void setEraser(IEraser eraser) {
+    @Autowired
+    public void setEraser(@Qualifier("rubber") IEraser eraser) {
         this.eraser = eraser;
     }
 
     @Required
-    public void setWriter(IWriter writer) {
+    @Autowired
+    public void setWriter(@Qualifier("pencil") IWriter writer) {
         this.writer = writer;
     }
 

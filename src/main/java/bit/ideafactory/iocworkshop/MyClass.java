@@ -1,6 +1,9 @@
 package bit.ideafactory.iocworkshop;
 
 import bit.ideafactory.iocworkshop.student.studentkit.IPaper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,9 +13,12 @@ import java.util.Map;
 /**
  * @author Michal Partyka
  */
+@Component
+@Scope(value = "singleton")
 public class MyClass {
     private final List<IStudent> students = new ArrayList<IStudent>();
 
+    @Autowired
     public MyClass(List<IStudent> students) {
         this.students.addAll(students);
     }

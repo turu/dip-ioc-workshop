@@ -2,22 +2,30 @@ package bit.ideafactory.iocworkshop.student;
 
 import bit.ideafactory.iocworkshop.student.studentkit.IPaper;
 import bit.ideafactory.iocworkshop.student.studentkit.IWriter;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Required;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 /**
  * Author: Piotr Turek
  */
+@Component
+@Scope(value = "prototype")
 public class FoolStudent extends AbstractStudent {
     private IWriter writer;
 
-    public FoolStudent(IPaper paper) {
+    @Autowired
+    public FoolStudent(@Qualifier("paperForExam") IPaper paper) {
         super(paper);
     }
 
     @Required
-    public void setWriter(IWriter writer) {
+    @Autowired
+    public void setWriter(@Qualifier("pen") IWriter writer) {
         this.writer = writer;
     }
 

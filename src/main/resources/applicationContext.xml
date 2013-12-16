@@ -6,22 +6,6 @@
 
     <context:component-scan base-package="bit.ideafactory.iocworkshop"/>
 
-    <bean id="examStudent" abstract="true" class="bit.ideafactory.iocworkshop.student.AbstractStudent">
-        <constructor-arg ref="paperForExam"/>
-    </bean>
-    <bean id="foolStudent" scope="prototype" class="bit.ideafactory.iocworkshop.student.FoolStudent" parent="examStudent">
-        <property name="writer" ref="pen"/>
-    </bean>
-    <bean id="scientificStudent" scope="prototype" class="bit.ideafactory.iocworkshop.student.ScientificStudent" parent="examStudent">
-        <property name="writer" ref="pen"/>
-    </bean>
-
-    <bean id="humanistStudent" scope="prototype" class="bit.ideafactory.iocworkshop.student.HumanistStudent">
-        <constructor-arg ref="lessonPaper"/>
-        <property name="eraser" ref="rubber"/>
-        <property name="writer" ref="pencil"/>
-    </bean>
-
     <bean id="studentClass" class="bit.ideafactory.iocworkshop.MyClass">
         <constructor-arg>
             <list>
