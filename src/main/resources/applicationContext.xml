@@ -11,14 +11,16 @@
     <bean id="examPaper" class="bit.ideafactory.iocworkshop.student.studentkit.paper.ExamPaper" scope="prototype"/>
     <bean id="lessonPaper" class="bit.ideafactory.iocworkshop.student.studentkit.paper.LessonPaper" scope="prototype"/>
 
-    <bean id="foolStudent" scope="prototype" class="bit.ideafactory.iocworkshop.student.FoolStudent">
+    <bean id="examStudent" abstract="true" class="bit.ideafactory.iocworkshop.student.AbstractStudent">
         <constructor-arg ref="examPaper"/>
+    </bean>
+    <bean id="foolStudent" scope="prototype" class="bit.ideafactory.iocworkshop.student.FoolStudent" parent="examStudent">
         <property name="writer" ref="pen"/>
     </bean>
-    <bean id="scientificStudent" scope="prototype" class="bit.ideafactory.iocworkshop.student.ScientificStudent" >
-        <constructor-arg ref="examPaper"/>
+    <bean id="scientificStudent" scope="prototype" class="bit.ideafactory.iocworkshop.student.ScientificStudent" parent="examStudent">
         <property name="writer" ref="pen"/>
     </bean>
+
     <bean id="humanistStudent" scope="prototype" class="bit.ideafactory.iocworkshop.student.HumanistStudent">
         <constructor-arg ref="lessonPaper"/>
         <property name="eraser" ref="rubber"/>
