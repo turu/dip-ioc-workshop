@@ -50,16 +50,9 @@ public class Runner {
     }
 
     private void init() {
-        final IEraser corrector = (IEraser) context.getBean("corrector");
-        final IEraser rubber = (IEraser) context.getBean("rubber");
-        final IWriter pen = (IWriter) context.getBean("pen");
-        final IWriter pencil = (IWriter) context.getBean("pencil");
-        final IPaperFactory examPaperFactory = (IPaperFactory) context.getBean("examPaperFactory");
-        final IPaperFactory lessonPaperFactory = (IPaperFactory) context.getBean("lessonPaperFactory");
-
-        foolStudentFactory = new FoolStudentFactory(examPaperFactory, corrector, pen);
-        scientificStudentFactory = new ScientificStudentFactory(examPaperFactory, pen);
-        humanistStudentFactory = new HumanistStudentFactory(lessonPaperFactory, rubber, pencil);
+        foolStudentFactory = (FoolStudentFactory) context.getBean("foolStudentFactory");
+        scientificStudentFactory = (ScientificStudentFactory) context.getBean("scientificStudentFactory");
+        humanistStudentFactory = (HumanistStudentFactory) context.getBean("humanistStudentFactory");
 
         final IStudent foolStudent = foolStudentFactory.create();
         final IStudent humanistStudent = humanistStudentFactory.create();

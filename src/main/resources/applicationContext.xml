@@ -11,4 +11,20 @@
     <bean id="examPaperFactory" class="bit.ideafactory.iocworkshop.student.studentkit.paper.factories.ExamPaperFactory"/>
     <bean id="lessonPaperFactory" class="bit.ideafactory.iocworkshop.student.studentkit.paper.factories.LessonPaperFactory"/>
 
+    <bean id="foolStudentFactory" class="bit.ideafactory.iocworkshop.student.factories.FoolStudentFactory">
+        <constructor-arg ref="corrector"/>
+        <constructor-arg ref="pen"/>
+        <constructor-arg ref="examPaperFactory"/>
+    </bean>
+
+    <bean id="scientificStudentFactory" class="bit.ideafactory.iocworkshop.student.factories.ScientificStudentFactory">
+        <constructor-arg ref="examPaperFactory"/>
+        <constructor-arg ref="pen"/>
+    </bean>
+
+    <bean id="humanistStudentFactory" class="bit.ideafactory.iocworkshop.student.factories.HumanistStudentFactory">
+        <constructor-arg ref="lessonPaperFactory"/>
+        <constructor-arg ref="rubber"/>
+        <constructor-arg ref="pencil"/>
+    </bean>
 </beans>
