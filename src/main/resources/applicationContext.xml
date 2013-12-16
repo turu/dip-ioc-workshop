@@ -8,27 +8,20 @@
     <bean id="pencil" class="bit.ideafactory.iocworkshop.student.studentkit.writers.Pencil"/>
     <bean id="corrector" class="bit.ideafactory.iocworkshop.student.studentkit.erasers.Corrector"/>
 
-    <bean id="examPaperFactory" class="bit.ideafactory.iocworkshop.student.studentkit.paper.factories.ExamPaperFactory"/>
-    <bean id="lessonPaperFactory" class="bit.ideafactory.iocworkshop.student.studentkit.paper.factories.LessonPaperFactory"/>
+    <bean id="examPaper" class="bit.ideafactory.iocworkshop.student.studentkit.paper.ExamPaper" scope="prototype"/>
+    <bean id="lessonPaper" class="bit.ideafactory.iocworkshop.student.studentkit.paper.LessonPaper" scope="prototype"/>
 
-    <bean id="foolStudentFactory" class="bit.ideafactory.iocworkshop.student.factories.FoolStudentFactory">
-        <constructor-arg ref="corrector"/>
+    <bean id="foolStudent" scope="prototype" class="bit.ideafactory.iocworkshop.student.FoolStudent">
         <constructor-arg ref="pen"/>
-        <constructor-arg ref="examPaperFactory"/>
+        <constructor-arg ref="examPaper"/>
     </bean>
-
-    <bean id="scientificStudentFactory" class="bit.ideafactory.iocworkshop.student.factories.ScientificStudentFactory">
-        <constructor-arg ref="examPaperFactory"/>
+    <bean id="scientificStudent" scope="prototype" class="bit.ideafactory.iocworkshop.student.ScientificStudent" >
         <constructor-arg ref="pen"/>
+        <constructor-arg ref="examPaper"/>
     </bean>
-
-    <bean id="humanistStudentFactory" class="bit.ideafactory.iocworkshop.student.factories.HumanistStudentFactory">
-        <constructor-arg ref="lessonPaperFactory"/>
-        <constructor-arg ref="rubber"/>
+    <bean id="humanistStudent" scope="prototype" class="bit.ideafactory.iocworkshop.student.HumanistStudent">
         <constructor-arg ref="pencil"/>
+        <constructor-arg ref="rubber"/>
+        <constructor-arg ref="lessonPaper"/>
     </bean>
-
-    <bean id="foolStudent" factory-bean="foolStudentFactory" factory-method="create" scope="prototype"/>
-    <bean id="scientificStudent" factory-bean="scientificStudentFactory" factory-method="create" scope="prototype"/>
-    <bean id="humanistStudent" factory-bean="humanistStudentFactory" factory-method="create" scope="prototype"/>
 </beans>
