@@ -31,10 +31,6 @@ public class Runner {
 
     private final ClassPathXmlApplicationContext context;
 
-    private FoolStudentFactory foolStudentFactory;
-    private ScientificStudentFactory scientificStudentFactory;
-    private HumanistStudentFactory humanistStudentFactory;
-
     private MyClass myClass;
 
 
